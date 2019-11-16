@@ -64,18 +64,18 @@
   </div>
 
   <script type="text/javascript">
-    // Question: What does this code do?
     $("#add-btn").on("click", function(event) {
       event.preventDefault();
-      var newCharacter = {
-        name: $("#name").val().trim(),
-        role: $("#role").val().trim(),
-        age: $("#age").val().trim(),
-        forcePoints: $("#force-points").val().trim()
-      };
+      var newTable = {
+       customerName: $("#name").val(),
+       phoneNumber: $("#phonenumber").val(),
+       customerEmail: $("#email").val(),
+       customerID: $("#uniqueid").val()}
+    
+    ;
 
       // Question: What does this code do??
-      $.post("/api/characters", newCharacter)
+      $.post("/api/tables", newTable)
         .then(function(data) {
           console.log("add.html", data);
           alert("Adding character...");

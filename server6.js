@@ -2,6 +2,9 @@
 // =============================================================
 var express = require("express");
 var path = require("path");
+var Customer = require("./Customer.js")
+var tables = require("./tables.js")
+var waitList = require("./waitlist.js")
 
 // Sets up the Express App
 // =============================================================
@@ -14,7 +17,7 @@ app.use(express.json());
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
   // res.send("Welcome to the Star Wars Page!")
-  res.sendFile(path.join(__dirname, "h.html"));
+  res.sendFile(path.join(__dirname, "add.html"));
 });
 
 // Displays all characters
@@ -35,11 +38,14 @@ app.post("/api/tables", function(req, res) {
   // We then add the json the user sent to the character array
   if(tables.length < 5) {
     tables.push(newTable);
-  }
-  waitList.push(newTable);
+  }else {waitList.push(newTable)}
 
   // We then display the JSON to the users
   res.json(newTable);
+  console.log(tables);
+  console.log("--------------------------------------------")
+  console.log(waitList);
+  
 });
 
 // Starts the server to begin listening
