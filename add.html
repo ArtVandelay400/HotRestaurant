@@ -64,6 +64,7 @@
   </div>
 
   <script type="text/javascript">
+    
     $("#add-btn").on("click", function(event) {
       event.preventDefault();
       var newTable = {
@@ -71,11 +72,11 @@
        phoneNumber: $("#phonenumber").val(),
        customerEmail: $("#email").val(),
        customerID: $("#uniqueid").val()}
-    
-    ;
+ 
 
       // Question: What does this code do??
       $.post("/api/tables", newTable)
+
         .then(function(data) {
           console.log("add.html", data);
           alert("Adding character...");
