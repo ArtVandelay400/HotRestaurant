@@ -1,3 +1,3 @@
-const tables = ["Hello", "Hi",];
+const tables = [];
 
 module.exports = tables;
