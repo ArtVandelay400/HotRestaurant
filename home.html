@@ -17,45 +17,19 @@
       <h1>Hot Restaurant</h1>
       <h3>Book a table at a hot restaurant!</h3>
       <hr>
-      <a href="/"><button class="btn btn-danger btn-lg"><span class="fa fa-credit-card"></span>Make Reservation</button></a>
-      <a href="/"><button class="btn btn-primary btn-lg"><span class="fa fa-search"></span>View Tables</button></a>
+      <a href="add.html"><button class="btn btn-danger btn-lg"><span class="fa fa-credit-card"></span>Make Reservation</button></a>
+      <a href="view.html"><button class="btn btn-primary btn-lg"><span class="fa fa-search"></span>View Tables</button></a>
     </div>
     <div class="row">
 
       <div class="col-12">
 
-        <div class="card">
-          <div class="card-header">
-            <h3><strong>Table Reservation</strong></h3>
-          </div>
-          
-            <br>
-          </div>
+        <a href="api/tables">API Table Link</a> | <a href="/waitlist">API Wait List</a>
         </div>
 
       </div>
     </div>
   </div>
-
-  <script type="text/javascript">
-    // Question: What does this code do?
-    $("#add-btn").on("click", function(event) {
-      event.preventDefault();
-      var newCharacter = {
-        name: $("#name").val().trim(),
-        role: $("#role").val().trim(),
-        age: $("#age").val().trim(),
-        forcePoints: $("#force-points").val().trim()
-      };
-
-      // Question: What does this code do??
-      $.post("/api/characters", newCharacter)
-        .then(function(data) {
-          console.log("add.html", data);
-          alert("Adding character...");
-        });
-    });
-  </script>
 
 </body>
 </html>
